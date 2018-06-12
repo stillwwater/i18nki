@@ -13,7 +13,7 @@ import argparse
 
 from i18nki.parser import Parser
 from colorama import init, Fore, Back
-from i18nki.compilers import ini, gettext
+from i18nki.compilers import ini, gettext, yaml
 
 # initialize colorama
 init(autoreset=True)
@@ -64,9 +64,11 @@ os.chdir(home)
 compiler_choice = args.compiler.lower() if args.compiler is not None else 'INI'
 compiler = ini.INI()
 
+# change compiler option
 if compiler_choice == 'gettext' or compiler_choice == 'po':
-    # change compiler option to gettext
     compiler = gettext.Gettext()
+elif compiler_choice == 'yaml' or compiler_choice == 'yml':
+    compiler = yaml.YAML()
 
 # compile tree
 compiler.compile(tree, args.output)
