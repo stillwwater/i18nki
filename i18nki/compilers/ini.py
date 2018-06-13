@@ -15,14 +15,15 @@ charset=UTF-8
 
 class INI(Compiler):
 
-    def __init__(self):
+    def __init__(self, separator=None):
         self.header = HEADER
         self.name = 'ini'
+        self.separator = separator if separator is not None else '='
 
     def compile_node(self, node):
         # compile comments
         out = '\n' + self.compile_comments(node, ';')
 
         # compile key
-        out += '%s=\n' % node.key
+        out += '%s%s\n' % (node.key, self.separator)
         return out

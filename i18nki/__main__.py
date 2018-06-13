@@ -38,6 +38,9 @@ argparser.add_argument(
 argparser.add_argument(
     '--compiler', help='which compiler to use (ie INI, Gettext...) [default=INI]')
 
+argparser.add_argument(
+    '--separator', help='change default sepator character (ie ":" instead of "=" with ini)')
+
 # parse arguments
 args = argparser.parse_args()
 
@@ -62,7 +65,7 @@ os.chdir(home)
 
 # default compiler to INI
 compiler_choice = args.compiler.lower() if args.compiler is not None else 'INI'
-compiler = ini.INI()
+compiler = ini.INI(args.separator)
 
 # change compiler option
 if compiler_choice == 'gettext' or compiler_choice == 'po':
