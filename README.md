@@ -20,14 +20,15 @@ python3 -m i18nki [-h] -i INPUT -o OUTPUT -f FILTER -c COMMENT [--compiler COMPI
 ```
 
 
-| Option       | Shortcut | Description                                         | Example                                                   |
-| ------------ | -------- | --------------------------------------------------- | --------------------------------------------------------- |
-| `--help`     | `-h`     | Display help doc                                    | `python3 i18nki.py -h`                                    |
-| `--input`    | `-i`     | Specify an input directory (files to parse)         | `-i /path/to/source/`                                     |
-| `--output`   | `-o`     | Output file for compiled content                    | `-o en-US.po`                                             |
-| `--filter`   | `-f`     | Regex string to match function calls in source file | ` -f ".*?_\((.*?)\).*?$" ` matches `_("my-string", arg);` |
-| `--comment`  | `-c`     | Specifies the comment string of the source language | `-c "//"`                                                 |
-| `--compiler` |          | Specifies which compiler to use for the output file | `--compiler ini` (see 'compilers' for more)               |
+| Option        | Shortcut | Description                                         | Example                                                   |
+| ------------- | -------- | --------------------------------------------------- | --------------------------------------------------------- |
+| `--help`      | `-h`     | Display help doc                                    | `python3 i18nki.py -h`                                    |
+| `--input`     | `-i`     | Specify an input directory (files to parse)         | `-i /path/to/source/`                                     |
+| `--output`    | `-o`     | Output file for compiled content                    | `-o en-US.po`                                             |
+| `--filter`    | `-f`     | Regex string to match function calls in source file | ` -f ".*?_\((.*?)\).*?$" ` matches `_("my-string", arg);` |
+| `--comment`   | `-c`     | Specifies the comment string of the source language | `-c "//"`                                                 |
+| `--compiler`  |          | Specifies which compiler to use for the output file | `--compiler ini` (see 'compilers' for more)               |
+| `--separator` |          | Specifies key/value separator character             | `--separator ' = '`                                       |
 
 
 
